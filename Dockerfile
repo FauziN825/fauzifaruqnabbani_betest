@@ -5,6 +5,6 @@ WORKDIR "/app"
 COPY package.json .
 RUN npm install
 COPY . ./
-ENV PORT 4000
+ENV PORT 3004
 EXPOSE $PORT
 CMD ["npm", "run", "start"]
