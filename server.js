@@ -1,9 +1,8 @@
 const app = require("./index");
 const environements = require('./environement')
+const winston = require('winston')
 
-require('./startup/logging')();
-require('./startup/validation')();
 
-app.listen(environements.port, () => {
-    console.log(`App is running on port ${environements.port}`)
-})
+app.listen(environements.port, () => winston.info('App Listening on URL: http://localhost:' + environements.port)
+    
+)
