@@ -7,8 +7,7 @@ dotenv.config();
 
 const {APP_PORT, APP_KEY, DATABASE_URL, REDIS_HOST, REDIS_PORT, DATABASE_URL_TEST } = process.env;
 
-assert(APP_PORT, 'POST is required');
-assert(APP_KEY, 'APP_KEY is required');
+
 
 
 module.exports = {

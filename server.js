@@ -2,7 +2,7 @@ const app = require("./index");
 const environements = require('./environement')
 const winston = require('winston')
 
-
-app.listen(environements.port, () => winston.info('App Listening on URL: http://localhost:' + environements.port)
-    
-)
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+    console.log(`Listening on port`, PORT);
+  });

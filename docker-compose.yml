@@ -1,17 +1,29 @@
-version: "3"
+version: '3'
+networks:
+  app-test2:
+    driver: bridge
+
 services:
-  db:
-    image: mongo:latest
-    ports:
-      - "27017"
-  redis-server:
-    image: redis:latest
-    ports:
-      - "6379"
-  app:
+  node-appv2:
+    container_name: node-apps2
+    restart: always
     build: .
-    links:
-      - db
-      - redis-server
     ports:
-      - "8080"
+      - "3000:3000"
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=3000
+    networks:
+      - app-test2
+    links:
+      - mongo
+  mongo:
+    container_name: mymongodatabase2
+    image: mongo
+    ports:
+      - "27018:27017"
+    networks:
+      - app-test2
+    

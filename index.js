@@ -12,7 +12,7 @@ let redis = require("redis");
 
 const responseTime = require("response-time");
 
-let client = redis.createClient();
+// let client = redis.createClient();
 
 mongoose.Promise = global.Promise;
 
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "test") {
   dbURI = environement.dburltest;
 }
 mongoose
-  .connect('mongodb://db')
+  .connect('mongodb://mongo/mydatabase')
   .then(() => winston.info("Mongo Db Connected....."));
 const db = mongoose.connection;
 
@@ -37,20 +37,20 @@ db.once("open", (err) => {
 });
 
 // instantiate a connection to redis
-client.on("connect", () => {
-  console.log("Connected to Redis...");
-});
+// client.on("connect", () => {
+//   console.log("Connected to Redis...");
+// });
 
-client.set("string key", "string val", redis.print);
-client.hset("hash key", "hashtest 1", "some value", redis.print);
-client.hset(["hash key", "hashtest 2", "some other value"], redis.print);
-client.hkeys("hash key", function (err, replies) {
-  console.log(replies.length + " replies:");
-  replies.forEach(function (reply, i) {
-    console.log("    " + i + ": " + reply);
-  });
-  client.quit();
-});
+// client.set("string key", "string val", redis.print);
+// client.hset("hash key", "hashtest 1", "some value", redis.print);
+// client.hset(["hash key", "hashtest 2", "some other value"], redis.print);
+// client.hkeys("hash key", function (err, replies) {
+//   console.log(replies.length + " replies:");
+//   replies.forEach(function (reply, i) {
+//     console.log("    " + i + ": " + reply);
+//   });
+//   client.quit();
+// });
 const { APP_PORT } = process.env;
 const app = express();
 const cors = require("cors");

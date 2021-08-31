@@ -4,9 +4,9 @@ const util = require("util");
 const environement = require('../environement')
 
 const client = redis.createClient({
-  host: 'redis-server',
-  port: 6379,
-  retry_strategy: () => 1000,
+  host: process.env.REDIS_URL,
+  port: process.env.REDIS_PORT,
+  password: process.env.REDIS_PASSWORD
 });
 client.hget = util.promisify(client.hget);
 const exec = mongoose.Query.prototype.exec;
