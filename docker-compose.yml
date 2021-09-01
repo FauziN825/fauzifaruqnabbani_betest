@@ -1,6 +1,6 @@
 version: '3'
 networks:
-  app-test6:
+  app-test7:
     driver: bridge
 
 volumes: 
@@ -8,8 +8,8 @@ volumes:
     name: mongo
 
 services:
-  node-appv6:
-    container_name: node-apps6
+  node-appv7:
+    container_name: node-apps7
     restart: always
     build: .
     ports:
@@ -20,13 +20,13 @@ services:
     environment:
       - PORT=3004
     networks:
-      - app-test6
+      - app-test7
     depends_on:
       - mongo
     environment:
       - MONGODB_URI=mongodb://mongo/mydatabase
   mongo:
-    container_name: mymongodatabase6
+    container_name: mymongodatabase7
     restart: always
     image: mongo
     ports:
@@ -34,4 +34,4 @@ services:
     volumes:
       - mongo:/data/db
     networks:
-      - app-test6
+      - app-test7

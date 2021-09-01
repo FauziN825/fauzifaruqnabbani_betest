@@ -16,11 +16,11 @@ const userSchema = new Schema(
       type: String,
     },
     accountNumber: {
-      type: Number,
+      type: String,
       unique: true,
     },
     identityNumber: {
-      type: Number,
+      type: String,
       unique: true,
     },
   },
