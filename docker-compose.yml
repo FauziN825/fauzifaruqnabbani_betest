@@ -35,4 +35,3 @@ services:
       - mongo:/data/db
     networks:
       - app-test6
-    

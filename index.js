@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === "test") {
   dbURI = environement.dburltest;
 }
 mongoose
-  .connect('mongodb://mongo/mydatabase')
+  .connect(dbURI)
   .then(() => winston.info("Mongo Db Connected....."));
 const db = mongoose.connection;
 
