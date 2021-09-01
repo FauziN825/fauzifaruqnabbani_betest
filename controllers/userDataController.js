@@ -129,7 +129,7 @@ const getUserDataByIdentityNumber = async (req, res) => {
     if (userdata.length == 0) {
       return res.status(400).send("User Not Found");
     }
-    res.status(200).send({ message: "Get by Account Number", user: userdata });
+    res.status(200).send({ message: "Get by Identity Number", user: userdata });
   } catch (err) {
     res.status(500).send(err.message);
   }
