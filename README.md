@@ -44,3 +44,8 @@ Clone the repo
  ![image](https://user-images.githubusercontent.com/85719272/131643068-73e2a782-4dc1-4092-9ef7-5022404a3bc0.png)
  ![image](https://user-images.githubusercontent.com/85719272/131643193-69681da4-3b25-4951-bece-9490fac818cd.png)
 
+# Result of unit test
+unit test uses jest, handles success and failure returns, with a coverage score of 88.31%
+
+
+![Unit Test Result](https://user-images.githubusercontent.com/85719272/131644073-b3608699-be85-4a16-b06c-db70c3f902fe.PNG)
