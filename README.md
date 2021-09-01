@@ -41,3 +41,6 @@ Clone the repo
    docker-compose up
  ## Using Apps that are in the cloud (Release)
  Currently the app has been released and deployed on heroku. Please refer to this link for live demo https://fauzi-faruq-nabbani-betest.herokuapp.com. for data already available and connected with mongodb atlas and caching using redislab
+ ![image](https://user-images.githubusercontent.com/85719272/131643068-73e2a782-4dc1-4092-9ef7-5022404a3bc0.png)
+ ![image](https://user-images.githubusercontent.com/85719272/131643193-69681da4-3b25-4951-bece-9490fac818cd.png)
+
